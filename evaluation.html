@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Breast Cancer Risk Calculator | Your risk and breast cancer</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<!-- Custom css Link -->
+	<link rel="stylesheet" type="text/css" href="css/style-1.css">
+	<!-- Bootstrap CDN Link -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<!-- Font Awesome CDN Link -->
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+	<!-- Google Fonts -->
+	<link href='https://fonts.googleapis.com/css?family=Baloo' rel='stylesheet'>
+</head>
+<body style="background-color: #F8CFC7;">
+<!-- Navigation Menu -->
+<nav class="navbar navbar-default navbar-expand-lg navbar-dark">
+	<div class="container">
+	<div class="navbar-header d-flex col">
+		<a class="navbar-brand" href="#">Brand<b>Name</b></a>  		
+		<button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle navbar-toggler ml-auto">
+			<span class="navbar-toggler-icon"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</button>
+	</div>
+	<!-- Collection of nav links, forms, and other content for toggling -->
+	<div id="navbarCollapse" class="collapse navbar-collapse justify-content-start">
+		<ul class="nav navbar-nav navbar-right ml-auto">			
+			<!--<li class="nav-item">
+				<a data-toggle="dropdown" class="btn btn-primary nav-link dropdown-toggle" href="#">Login</a>
+				<ul class="dropdown-menu form-wrapper">					
+					<li>
+						<form action="/examples/actions/confirmation.php" method="post">
+							<p class="hint-text">Sign in with your social media account</p>
+							<div class="form-group social-btn clearfix">
+								<a href="#" class="btn btn-primary pull-left"><i class="fa fa-facebook"></i> Facebook</a>
+								<a href="#" class="btn btn-info pull-right"><i class="fa fa-twitter"></i> Twitter</a>
+							</div>
+							<div class="or-seperator"><b>or</b></div>
+							<div class="form-group">
+								<input type="text" class="form-control" placeholder="Username" required="required">
+							</div>
+							<div class="form-group">
+								<input type="password" class="form-control" placeholder="Password" required="required">
+							</div>
+							<input type="submit" class="btn btn-primary btn-block" value="Login">
+							<div class="form-footer">
+								<a href="#">Forgot Your password?</a>
+							</div>
+						</form>
+					</li>
+				</ul>
+			</li>-->
+			<li class="nav-item">
+				<a href="#" data-toggle="dropdown" class="btn btn-primary dropdown-toggle get-started-btn mt-1 mb-1">Log in</a>
+				<ul class="dropdown-menu form-wrapper">					
+					<li>
+						<form action="/examples/actions/confirmation.php" method="post">
+							<p class="hint-text">Fill in this form to login to your account!</p>
+							<div class="form-group">
+								<input type="text" class="form-control" placeholder="Username" required="required">
+							</div>
+							<div class="form-group">
+								<input type="password" class="form-control" placeholder="Password" required="required">
+							</div>
+							<div class="form-group">
+								<label class="checkbox-inline"><input type="checkbox" required="required"> Remember me!</label>
+							</div>
+							<input type="submit" class="btn btn-primary btn-block" value="Log in">
+						</form>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	</div>
+</nav>
+<!-- Main Container --> 
+<div class="container">
+    <div class="row">
+    	<div class="col-sm-12">
+    		<h1 class="text-center my-4">Your risk and breast cancer</h1>
+    	</div>
+    </div>
+    <div class="row">
+    	<div class="col-sm-12">
+    		<header>
+    			<h2 style="color: white;">Result</h2>
+    		</header>
+    		<main> <!-- Evaluation -->
+    			<div class="row">
+    				<div class="col-sm-12">
+    					<div class="card">
+						  <div class="card-body">
+						    <h4 class="card-title text-center text-uppercase text-dark">Your Risk of Breast Cancer</h4>
+						    <h1 class="card-title text-center text-uppercase" style="letter-spacing:
+						     5px;margin-top: -15px;">EVALUATION</h1>
+						    <div class="scale-wrap">
+						      <div class="scale">
+						      	<img src="img/scale.png" class="img-fluid" style="display: block;margin: auto;">
+						      </div>
+						      <div class="scale-marker scale-85">
+						      	<img src="img\scale_marker.png" class="img-fluid" style="display: block;margin: auto;">
+						      </div><!-- Scale classes in increments of 10. Min 20. Max 80 -->
+						    </div>
+						    <!-- Recommendation -->
+						    <div class="row" style="margin-top: 10px;">
+						    	<div class="col-sm-3"></div>
+						    	<div class="col-sm-6">
+						    		<h1 class="text-center">Recommendations</h1>
+						    		<div class="row">
+
+						    			<div class="col-sm-4 recommendation-1" data-toggle="modal" data-target="#myModal">
+						    				<img src="img/mri.png" class="img-fluid" style="width:50%;margin: 10px auto 0 auto;display: block;"><br>
+						    				<h6 class="text-center text-light">MRI</h6>
+						    			</div>
+						    			<div class="col-sm-4 recommendation-3" data-toggle="modal" data-target="#myModal">
+						    				<img src="img/microscope.png" class="img-fluid" style="width:50%;margin: 10px auto 0 auto;display: block;">
+						    				<h6 class="text-center text-light">MICROSCOPE</h6>
+						    			</div>
+						    			<div class="col-sm-4 recommendation-2" data-toggle="modal" data-target="#myModal">
+						    				<img src="img/ultrasound.png" class="img-fluid" style="width:50%;margin: 10px auto 0 auto;display: block;"><br>
+						    				<h6 class="text-center text-light">BREAST ULTRASOUND</h6>
+						    			</div>
+						    		</div>
+						    		<div class="row">
+						    			<div class="col-sm-4 recommendation-3" data-toggle="modal" data-target="#myModal">
+						    				<img src="img/glucosemeter.png" class="img-fluid" style="width:50%;margin: 10px auto 0 auto;display: block;"><br>
+						    				<h6 class="text-center text-light">GLUCOSE METER</h6>
+						    			</div>
+						    			<div class="col-sm-4 recommendation-2" data-toggle="modal" data-target="#myModal">
+						    				<img src="img/labortary.png" class="img-fluid" style="width:50%;margin: 10px auto 0 auto;display: block;"><br>
+						    				<h6 class="text-center text-light">LABORTARY</h6>
+						    			</div>
+						    			<div class="col-sm-4 recommendation-1" data-toggle="modal" data-target="#myModal">
+						    				<img src="img/cerebral.png" class="img-fluid" style="width:50%;margin: 10px auto 0 auto;display: block;"><br>
+						    				<h6 class="text-center text-light">CEREBRAL DIAGNOSE</h6>
+						    			</div>
+						    		</div>
+						    		<div class="row">
+						    			<div class="col-sm-4 recommendation-2" data-toggle="modal" data-target="#myModal">
+						    				<img src="img/eyetest.png" class="img-fluid" style="width:50%;margin: 10px auto 0 auto;display: block;"><br>
+						    				<h6 class="text-center text-light">EYE TEST</h6>
+						    			</div>
+						    			<div class="col-sm-4 recommendation-1" data-toggle="modal" data-target="#myModal">
+						    				<img src="img/bloodpressure.png" class="img-fluid" style="width:50%;margin: 10px auto 0 auto;display: block;"><br>
+						    				<h6 class="text-center text-light">BLOOD PRESSURE</h6>
+						    			</div>
+						    			<div class="col-sm-4 recommendation-3" data-toggle="modal" data-target="#myModal">
+						    				<img src="img/xray.png" class="img-fluid" style="width:50%;margin: 10px auto 0 auto;display: block;"><br>
+						    				<h6 class="text-center text-light">XRAY</h6>
+						    			</div>
+						    		</div>
+						    	</div>
+						    	<div class="col-sm-3"></div>
+						    </div>
+						</div>
+					</div>
+				</div>
+    		</main>
+    		
+    	</div>
+    </div>
+    
+	<!-- The Modal -->
+  <div class="modal fade" id="myModal">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">More Details</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+          <ul>
+          	<li>Breast ultrasound</li>
+          	<li>Digital mammogram</li>
+          	<li>MRI</li>
+          	<li>Biopsy</li>
+          	<li>Gene test</li>
+          	<li>Doctor Counselling</li>
+          	<li>Can use these icon for</li>
+		  </ul>
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+    
+<!-- End Main -->
+<!-- Bootstrap Scripts CDN Links -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<!-- Custom script -->
+<script type="text/javascript" src="js/script.js"></script>
+<!-- Drop down form Script -->
+<script type="text/javascript">
+	// Prevent dropdown menu from closing when click inside the form
+	$(document).on("click", ".navbar-right .dropdown-menu", function(e){
+		e.stopPropagation();
+	});
+</script>
+</body>
+</html>
